@@ -6,28 +6,11 @@
          </t>
     </t> -->
     <t t-extend="Orderline" t-as="OrderlineWithTax">
-        <t t-jquery="li[class='info']" t-operation="replace">
-            <li class="info">
-                <em>
-                    <t t-esc="line.get_quantity_str()" />
-                </em>
-                <t t-esc="line.get_unit().name" />
-                at
-                <t t-if="line.display_discount_policy() == 'without_discount' &amp;&amp;
-                    line.get_unit_display_price() != line.get_lst_price()">
-                    <s>
-                        <t t-esc="widget.format_currency(line.get_fixed_lst_price(),'Product Price')" />
-                    </s>
-                    <t t-esc="widget.format_currency(line.get_unit_display_price(),'Product Price')" />
-                </t>
-                <t t-else="">
-                    <t t-esc="widget.format_currency(line.get_unit_display_price(),'Product Price')" />
-                </t>
-                /
-                <t t-esc="line.get_unit().name" />
-                <span style="display: block;text-align: right;color:rgb(66 133 244);font-weight:bold">
-                    Tax:+<t t-esc="widget.format_currency(line.get_tax(),'Product Tex')"/>
-                </span>
+        <t t-jquery="ul[class='info-list']" t-operation="append">
+            <li class="info" style="text-align: right;">
+              <span style="color:rgb(66 133 244);font-weight:bold">
+                Tax:+<t t-esc="widget.format_currency(line.get_tax(),'Product Tex')"/>
+              </span>
             </li>
         </t>
     </t>
