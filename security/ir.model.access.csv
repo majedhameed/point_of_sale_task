@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ponint_of_sale_tax_ponint_of_sale_tax,ponint_of_sale_tax.ponint_of_sale_tax,model_ponint_of_sale_tax_ponint_of_sale_tax,base.group_user,1,1,1,1
